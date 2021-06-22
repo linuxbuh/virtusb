@@ -1,0 +1,75 @@
+; VIRTUSB.INF
+; Copyright (c) 2009-2016 Michael Singer
+
+[Version]
+Signature = "$WINDOWS NT$"
+Class     = System
+ClassGUID = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider  = %virtusb.Mfg%
+DriverVer = 04/06/2016,1.0.0.17
+
+[SourceDisksNames]
+1 = %Disk_Description%,,,""
+
+[SourceDisksFiles]
+virtusb.sys  = 1,,
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[Manufacturer]
+%virtusb.Mfg% = virtusb.Section
+
+[virtusb.Section]
+%ROOT\VIRTUSB.DeviceDesc% = virtusb.Dev, ROOT\VIRTUSB
+
+[virtusb.Dev.NT]
+CopyFiles = virtusb.CopyFiles
+
+[virtusb.CopyFiles]
+virtusb.sys
+
+[virtusb.Dev.NT.HW]
+AddReg = virtusb.Dev.NT.HW.AddReg
+
+[virtusb.Dev.NT.HW.AddReg]
+HKR,,DeviceCharacteristics,%REG_DWORD%,0x0100 ; Use same security checks on relative opens
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"  ; Allow generic-all access to Built-in administrators and Local system
+
+[virtusb.Dev.NT.Services]
+AddService = virtusb,%SPSVCINST_ASSOCSERVICE%,virtusb.AddService
+
+[virtusb.AddService]
+DisplayName    = %virtusb.SvcDesc%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_DEMAND_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = %12%\virtusb.sys
+LoadOrderGroup = Extended Base
+
+[Strings]
+
+;  *******Localizable Strings*******
+virtusb.Mfg             = "virtusb"
+ROOT\VIRTUSB.DeviceDesc = "USB Virtual Host Controller Interface Enumerator"
+virtusb.SvcDesc         = "USB VHCI Enumerator Driver"
+Disk_Description        = "virtusb Installation Disk"
+
+;  *******Non Localizable Strings*******
+SPSVCINST_ASSOCSERVICE = 0x00000002
+
+SERVICE_BOOT_START     = 0
+SERVICE_SYSTEM_START   = 1
+SERVICE_AUTO_START     = 2
+SERVICE_DEMAND_START   = 3
+SERVICE_DISABLED       = 4
+
+SERVICE_KERNEL_DRIVER  = 1
+
+SERVICE_ERROR_IGNORE   = 0
+SERVICE_ERROR_NORMAL   = 1
+SERVICE_ERROR_SEVERE   = 2
+SERVICE_ERROR_CRITICAL = 3
+
+REG_EXPAND_SZ = 0x00020000
+REG_DWORD     = 0x00010001

@@ -1,0 +1,88 @@
+; VUSBVHCI.INF
+; Copyright (c) 2009-2016 Michael Singer
+
+[Version]
+Signature = "$WINDOWS NT$"
+Class     = USB
+ClassGUID = {36fc9e60-c465-11cF-8056-444553540000}
+Provider  = %virtusb.Mfg%
+DriverVer = 04/06/2016,1.0.0.17
+
+[SourceDisksNames]
+1 = %Disk_Description%,,,""
+
+[SourceDisksFiles]
+vusbvhci.sys = 1,,
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[Manufacturer]
+%virtusb.Mfg% = vusbvhci.Section
+
+[vusbvhci.Section]
+%VIRTUSB\VHCI.DeviceDesc% = vusbvhci.Dev, VIRTUSB\VHCI
+
+[vusbvhci.Dev.NT]
+CopyFiles = vusbvhci.CopyFiles
+AddReg    = vusbvhci.Dev.NT.AddReg
+
+[vusbvhci.CopyFiles]
+vusbvhci.sys
+
+[vusbvhci.Dev.NT.AddReg]
+HKR,,EnumPropPages32,,"usbui.dll,USBControllerPropPageProvider"
+HKR,,Controller,1,01
+HKR,,EnIdleEndpointSupport,%REG_DWORD%,0
+HKR,,EnIdleEndpointSupportEx,%REG_DWORD%,0
+HKR,,EnSoftRetry,%REG_DWORD%,0
+
+[vusbvhci.Dev.NT.HW]
+AddReg = vusbvhci.Dev.NT.HW.AddReg
+
+[vusbvhci.Dev.NT.HW.AddReg]
+HKR,,DetectedLegacyBIOS,%REG_DWORD%,0
+
+[vusbvhci.Dev.NT.CoInstallers]
+AddReg = vusbvhci.Dev.NT.CoInstallers.AddReg
+
+[vusbvhci.Dev.NT.CoInstallers.AddReg]
+HKR,,CoInstallers32,0x00010000,"hccoin.dll,HCCOIN_Entry"
+
+[vusbvhci.Dev.NT.Services]
+AddService = vusbvhci,%SPSVCINST_ASSOCSERVICE%,vusbvhci.AddService
+
+[vusbvhci.AddService]
+DisplayName    = %vusbvhci.SvcDesc%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_DEMAND_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = %12%\vusbvhci.sys
+LoadOrderGroup = Extended Base
+
+[Strings]
+
+;  *******Localizable Strings*******
+virtusb.Mfg             = "virtusb"
+VIRTUSB\VHCI.DeviceDesc = "USB Virtual Host Controller Interface"
+vusbvhci.SvcDesc        = "USB VHCI Driver"
+Disk_Description        = "virtusb Installation Disk"
+
+;  *******Non Localizable Strings*******
+SPSVCINST_ASSOCSERVICE = 0x00000002
+
+SERVICE_BOOT_START     = 0
+SERVICE_SYSTEM_START   = 1
+SERVICE_AUTO_START     = 2
+SERVICE_DEMAND_START   = 3
+SERVICE_DISABLED       = 4
+
+SERVICE_KERNEL_DRIVER  = 1
+
+SERVICE_ERROR_IGNORE   = 0
+SERVICE_ERROR_NORMAL   = 1
+SERVICE_ERROR_SEVERE   = 2
+SERVICE_ERROR_CRITICAL = 3
+
+REG_EXPAND_SZ = 0x00020000
+REG_DWORD     = 0x00010001

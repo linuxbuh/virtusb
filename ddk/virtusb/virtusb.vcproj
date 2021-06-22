@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8,00"
+	Name="virtusb"
+	ProjectGUID="{575D4602-0E96-4371-AD75-670740A98C5E}"
+	RootNamespace="virtusb"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+		<Platform
+			Name="x64"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug WindowsXP|Win32"
+			OutputDirectory="$(SolutionDir)debug\$(IntDir)\"
+			IntermediateDirectory="objchk_wxp_x86"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) chk wxp"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) chk wxp"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug WindowsXP|x64"
+			OutputDirectory="$(SolutionDir)debug\$(IntDir)\"
+			IntermediateDirectory="objchk_wxp_amd64"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) chk wxp amd64"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) chk wxp amd64"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release WindowsXP|Win32"
+			OutputDirectory="$(SolutionDir)release\$(IntDir)\"
+			IntermediateDirectory="objfre_wxp_x86"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) fre wxp"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) fre wxp"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release WindowsXP|x64"
+			OutputDirectory="$(SolutionDir)release\$(IntDir)\"
+			IntermediateDirectory="objfre_wxp_amd64"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) fre wxp amd64"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) fre wxp amd64"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug Windows 2000|Win32"
+			OutputDirectory="$(SolutionDir)debug\$(IntDir)\"
+			IntermediateDirectory="objchk_w2k_x86"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) chk w2k"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) chk w2k"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug Windows 2000|x64"
+			OutputDirectory="$(SolutionDir)debug\$(IntDir)\"
+			IntermediateDirectory="objchk_w2k_amd64"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) chk w2k amd64"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) chk w2k amd64"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release Windows 2000|Win32"
+			OutputDirectory="$(SolutionDir)release\$(IntDir)\"
+			IntermediateDirectory="objfre_w2k_x86"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) fre w2k"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) fre w2k"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release Windows 2000|x64"
+			OutputDirectory="$(SolutionDir)release\$(IntDir)\"
+			IntermediateDirectory="objfre_w2k_amd64"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) fre w2k amd64"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) fre w2k amd64"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug Windows Server 2003|Win32"
+			OutputDirectory="$(SolutionDir)debug\$(IntDir)\"
+			IntermediateDirectory="objchk_wnet_x86"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) chk wnet"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) chk wnet"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug Windows Server 2003|x64"
+			OutputDirectory="$(SolutionDir)debug\$(IntDir)\"
+			IntermediateDirectory="objchk_wnet_amd64"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) chk wnet amd64"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) chk wnet amd64"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release Windows Server 2003|Win32"
+			OutputDirectory="$(SolutionDir)release\$(IntDir)\"
+			IntermediateDirectory="objfre_wnet_x86"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) fre wnet"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) fre wnet"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release Windows Server 2003|x64"
+			OutputDirectory="$(SolutionDir)release\$(IntDir)\"
+			IntermediateDirectory="objfre_wnet_amd64"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;build_virtusb.bat $(IntDir) $(OutDir) fre wnet amd64"
+				ReBuildCommandLine="cd $(ProjectDir)&#x0D;&#x0A;rebuild_virtusb.bat $(IntDir) $(OutDir) fre wnet amd64"
+				CleanCommandLine="cd $(ProjectDir)&#x0D;&#x0A;clean_virtusb.bat $(IntDir) $(OutDir)"
+				Output="$(ProjectName).sys"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
+			<File
+				RelativePath=".\busif.c"
+				>
+			</File>
+			<File
+				RelativePath=".\internal_io.c"
+				>
+			</File>
+			<File
+				RelativePath=".\pnp.c"
+				>
+			</File>
+			<File
+				RelativePath=".\power.c"
+				>
+			</File>
+			<File
+				RelativePath=".\proc_urb.c"
+				>
+			</File>
+			<File
+				RelativePath=".\roothub.c"
+				>
+			</File>
+			<File
+				RelativePath=".\usbdev.c"
+				>
+			</File>
+			<File
+				RelativePath=".\user_io.c"
+				>
+			</File>
+			<File
+				RelativePath=".\virtusb.c"
+				>
+			</File>
+			<File
+				RelativePath=".\wmi.c"
+				>
+			</File>
+			<File
+				RelativePath=".\work_unit.c"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
+			<File
+				RelativePath=".\busif.h"
+				>
+			</File>
+			<File
+				RelativePath=".\common.h"
+				>
+			</File>
+			<File
+				RelativePath=".\internal_io.h"
+				>
+			</File>
+			<File
+				RelativePath=".\pnp.h"
+				>
+			</File>
+			<File
+				RelativePath=".\power.h"
+				>
+			</File>
+			<File
+				RelativePath=".\proc_urb.h"
+				>
+			</File>
+			<File
+				RelativePath=".\resource.h"
+				>
+			</File>
+			<File
+				RelativePath=".\roothub.h"
+				>
+			</File>
+			<File
+				RelativePath=".\usbdev.h"
+				>
+			</File>
+			<File
+				RelativePath=".\user_io.h"
+				>
+			</File>
+			<File
+				RelativePath=".\virtusb.h"
+				>
+			</File>
+			<File
+				RelativePath=".\virtusb_ioctl.h"
+				>
+			</File>
+			<File
+				RelativePath=".\w2k.h"
+				>
+			</File>
+			<File
+				RelativePath=".\wmi.h"
+				>
+			</File>
+			<File
+				RelativePath=".\work_unit.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
+			<File
+				RelativePath=".\virtusb.rc"
+				>
+			</File>
+		</Filter>
+		<File
+			RelativePath=".\makefile"
+			>
+		</File>
+		<File
+			RelativePath=".\sources"
+			>
+		</File>
+		<File
+			RelativePath=".\virtusb.inf"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

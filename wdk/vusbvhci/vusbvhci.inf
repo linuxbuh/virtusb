@@ -1,0 +1,75 @@
+; vusbvhci.inf
+; Copyright (c) 2016 Michael Singer
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = USB
+ClassGuid   = {36fc9e60-c465-11cF-8056-444553540000}
+Provider    = %virtusb.Mfg%
+CatalogFile = virtusb.cat
+DriverVer   = 04/12/2016,1.0.0.17
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+vusbvhci.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%virtusb.Mfg% = vusbvhci,NT$ARCH$
+
+[vusbvhci.NT$ARCH$]
+%VIRTUSB\VHCI.DeviceDesc% = vusbvhci.Dev, VIRTUSB\VHCI
+
+[vusbvhci.Dev.NT]
+CopyFiles = vusbvhci.CopyFiles
+AddReg    = vusbvhci.Dev.NT.AddReg
+
+[vusbvhci.CopyFiles]
+vusbvhci.sys
+
+[vusbvhci.Dev.NT.AddReg]
+HKR,,EnumPropPages32,,"usbui.dll,USBControllerPropPageProvider"
+HKR,,Controller,1,01
+HKR,,EnIdleEndpointSupport,0x00010001,0
+HKR,,EnIdleEndpointSupportEx,0x00010001,0
+HKR,,EnSoftRetry,0x00010001,0
+
+[vusbvhci.Dev.NT.HW]
+AddReg = vusbvhci.Dev.NT.HW.AddReg
+
+[vusbvhci.Dev.NT.HW.AddReg]
+HKR,,DetectedLegacyBIOS,0x00010001,0
+
+;[vusbvhci.Dev.NT.CoInstallers]
+;AddReg = vusbvhci.Dev.NT.CoInstallers.AddReg
+
+;[vusbvhci.Dev.NT.CoInstallers.AddReg]
+;HKR,,CoInstallers32,0x00010000,"hccoin.dll,HCCOIN_Entry"
+
+;-------------- Service installation
+[vusbvhci.Dev.NT.Services]
+AddService = vusbvhci,%SPSVCINST_ASSOCSERVICE%,vusbvhci.AddService
+
+; -------------- vusbvhci driver install sections
+[vusbvhci.AddService]
+DisplayName    = %vusbvhci.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\vusbvhci.sys
+LoadOrderGroup = Extended Base
+
+[Strings]
+SPSVCINST_ASSOCSERVICE  = 0x00000002
+virtusb.Mfg             = "virtusb"
+DiskName                = "virtusb Installation Disk"
+vusbvhci.SVCDESC        = "USB VHCI Driver"
+VIRTUSB\VHCI.DeviceDesc = "USB Virtual Host Controller Interface"

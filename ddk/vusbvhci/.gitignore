@@ -1,0 +1,6 @@
+/Release*
+/Debug*
+/objchk_*
+/objfre_*
+/x64
+/*.log

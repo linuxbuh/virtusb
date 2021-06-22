@@ -1,0 +1,26 @@
+TARGETTYPE=DRIVER
+TARGETNAME=vusbvhci
+TARGETPATH=obj
+TARGETLIBS= \
+	$(DDK_LIB_PATH)\ntstrsafe.lib \
+	$(DDK_LIB_PATH)\wdmsec.lib
+
+INCLUDES= .
+SOURCES= \
+	vusbvhci.c \
+	vusbvhci.rc \
+	power.c \
+	pnp.c \
+	wmi.c \
+	busif.c \
+	internal_io.c \
+	user_io.c
+
+!if !defined(DDK_TARGET_OS) || "$(DDK_TARGET_OS)"=="Win2K"
+C_DEFINES = $(C_DEFINES) -DTARGETING_Win2K
+RUN_WPP=  $(SOURCES) -km -gen:{km-w2k.tpl}*.tmh
+
+!else
+RUN_WPP= $(SOURCES) -km
+!endif
+
